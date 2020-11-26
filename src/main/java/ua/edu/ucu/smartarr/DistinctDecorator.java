@@ -28,6 +28,7 @@ public class DistinctDecorator extends SmartArrayDecorator {
 
     @Override
     public String operationDescription() {
-        return "Remove duplicates from SmartArray. Use method equals() to compare objects\n";
+        return "Remove duplicates from SmartArray. " +
+                "Use method equals() to compare objects";
     }
 }

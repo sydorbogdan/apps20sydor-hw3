@@ -43,6 +43,7 @@ public class SmartArrayAppTest {
 
     @Test
     public void testStudent() {
+        SmartArrayApp test = new SmartArrayApp();
         Student studentOne = new Student("Ivar", "Grimstad", 3.9, 2);
         Student studentTwo = new Student("Philipp", "Krenn", 4.3, 3);
         assertEquals("Student{name=Ivar, surname=Grimstad, GPA=3.9, year=2}", studentOne.toString());
