@@ -3,20 +3,20 @@ package ua.edu.ucu;
 
 public class Student {
 
-    private double GPA;
+    private double gPA;
     private int year;
     private String name;
     private String surname;
 
-    public Student(String name, String surname, double GPA, int year) {
-        this.GPA = GPA;
+    public Student(String name, String surname, double inpGPA, int year) {
+        this.gPA = inpGPA;
         this.year = year;
         this.name = name;
         this.surname = surname;
     }
 
     public double getGPA() {
-        return GPA;
+        return gPA;
     }
 
     public int getYear() {
@@ -33,13 +33,15 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
+        return "Student{name=" + name + ", surname="
+                + surname + ", " + "GPA=" + gPA + "," +
+                " year=" + year + '}';
     }
 
     @Override
     public boolean equals(Object inpStudent) {
         Student copInpStudent = (Student) inpStudent;
-        boolean eq = (this.GPA == copInpStudent.GPA)
+        boolean eq = (this.gPA == copInpStudent.gPA)
                 && (this.name.equals(copInpStudent.name))
                 && (this.surname.equals(copInpStudent.surname))
                 && (this.year == copInpStudent.year);

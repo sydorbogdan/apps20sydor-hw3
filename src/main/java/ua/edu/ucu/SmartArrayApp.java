@@ -5,12 +5,18 @@ import java.util.Arrays;
 import ua.edu.ucu.functions.MyComparator;
 import ua.edu.ucu.functions.MyFunction;
 import ua.edu.ucu.functions.MyPredicate;
-import ua.edu.ucu.smartarr.*;
+import ua.edu.ucu.smartarr.SmartArray;
+import ua.edu.ucu.smartarr.BaseArray;
+import ua.edu.ucu.smartarr.FilterDecorator;
+import ua.edu.ucu.smartarr.DistinctDecorator;
+import ua.edu.ucu.smartarr.SortDecorator;
+import ua.edu.ucu.smartarr.MapDecorator;
+
 
 public class SmartArrayApp {
 
     public static Integer[]
-    filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
+    filterPositiveIntegersSortAndMultiplyByTwo(Integer[] integers) {
 
         MyPredicate pr = new MyPredicate() {
             @Override
@@ -21,8 +27,8 @@ public class SmartArrayApp {
 
         MyComparator cmp = new MyComparator() {
             @Override
-            public int compare(Object o1, Object o2) {
-                return ((Integer) o1) - ((Integer) o2);
+            public int compare(Object first, Object second) {
+                return ((Integer) first) - ((Integer) second);
             }
         };
 
@@ -48,7 +54,7 @@ public class SmartArrayApp {
     }
 
     public static String[]
-    findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
+    findDistinctStudentNamesFromSecondYearWithGPAgt4AndOrderedBySurname(Student[] students) {
         MyPredicate pr = new MyPredicate() {
             @Override
             public boolean test(Object t) {
@@ -69,16 +75,20 @@ public class SmartArrayApp {
             @Override
             public Object apply(Object t) {
                 Student copInpStudent = (Student) t;
-                return new Student(copInpStudent.getName(), copInpStudent.getSurname(), copInpStudent.getGPA(), 2 * copInpStudent.getYear());
+                return new Student(copInpStudent.getName(),
+                        copInpStudent.getSurname(),
+                        copInpStudent.getGPA(),
+                        2 * copInpStudent.getYear());
             }
         };
 
         MyComparator cmp = new MyComparator() {
             @Override
-            public int compare(Object o1, Object o2) {
-                Student s1 = (Student) o1;
-                Student s2 = (Student) o2;
-                return s1.getSurname().compareTo(s2.getSurname());
+            public int compare(Object first, Object second) {
+                Student firstStud = (Student) first;
+                Student secondStud = (Student) second;
+                return firstStud.getSurname().compareTo(secondStud
+                        .getSurname());
             }
         };
 
