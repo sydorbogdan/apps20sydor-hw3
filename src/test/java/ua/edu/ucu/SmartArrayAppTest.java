@@ -39,4 +39,22 @@ public class SmartArrayAppTest {
         }
         assertArrayEquals(expectedStudentNames, studentNames);
     }
+
+
+    @Test
+    public void testStudent() {
+        Student studentOne = new Student("Ivar", "Grimstad", 3.9, 2);
+        Student studentTwo = new Student("Philipp", "Krenn", 4.3, 3);
+        assertEquals("Student{name=Ivar, surname=Grimstad, GPA=3.9, year=2}", studentOne.toString());
+        assertEquals(false, studentOne.equals(null));
+        assertEquals(false, studentOne.equals(new Object()));
+        assertEquals(false, studentOne.equals(studentTwo));
+    }
+
+
+    @Test(expected = AssertionError.class)
+    public void tesStudentHashCode() {
+        Student studentTwo = new Student("Philipp", "Krenn", 4.3, 3);
+        System.out.println(studentTwo.hashCode());
+    }
 }
