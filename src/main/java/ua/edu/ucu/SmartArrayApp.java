@@ -54,12 +54,13 @@ public class SmartArrayApp {
     }
 
     public static String[]
-    findDistinctStudentNamesFromSecondYearWithGPAgt4AndOrderedBySurname(Student[] students) {
+    findDistinctStudentNamesFromSecondYearWithGPAgtAndOrderedBySurname
+            (Student[] students, int lowestGPA) {
         MyPredicate pr = new MyPredicate() {
             @Override
             public boolean test(Object t) {
                 Student copInpStudent = (Student) t;
-                return copInpStudent.getGPA() >= 4;
+                return copInpStudent.getGPA() >= lowestGPA;
             }
         };
 
@@ -101,7 +102,8 @@ public class SmartArrayApp {
         Object[] arr = sa.toArray();
         String[] rezArr = new String[sa.size()];
         for (int i = 0; i < sa.size(); i++) {
-            rezArr[i] = ((Student) arr[i]).getSurname() + " " + ((Student) arr[i]).getName();
+            rezArr[i] = ((Student) arr[i]).getSurname() + " "
+                    + ((Student) arr[i]).getName();
         }
         return rezArr;
     }

@@ -34,8 +34,8 @@ public class Student {
     @Override
     public String toString() {
         return "Student{name=" + name + ", surname="
-                + surname + ", " + "GPA=" + gPA + "," +
-                " year=" + year + '}';
+                + surname + ", " + "GPA=" + gPA + ","
+                + " year=" + year + '}';
     }
 
     @Override
