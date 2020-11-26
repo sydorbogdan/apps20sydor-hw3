@@ -15,9 +15,9 @@ public class DistinctDecorator extends SmartArrayDecorator {
         for (Object i : inpSmartArray.toArray()) {
             int j = 0;
             for (; j < lastUsed + 1; j++) {
-                if (i.equals(nonRepElem[j])) {break; }
+                if (i.equals(nonRepElem[j])) { break; }
             }
-            if (j == lastUsed + 1) {nonRepElem[++lastUsed] = i; }
+            if (j == lastUsed + 1) { nonRepElem[++lastUsed] = i; }
         }
         return new BaseArray(Arrays.copyOfRange(nonRepElem, 0, lastUsed + 1));
     }
