@@ -8,12 +8,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 // Sorts elements using MyComparator to compare them
-public class SortDecorator extends SmartArrayDecorator{
+public class SortDecorator extends SmartArrayDecorator {
     public SortDecorator(SmartArray smartArray, MyComparator inpComp) {
         super(SortDecorator.sort(smartArray, inpComp));
     }
 
-    private static SmartArray sort(SmartArray inpSmartArray, MyComparator inpComp){
+    private static SmartArray sort(SmartArray inpSmartArray, MyComparator inpComp) {
         Object[] cop = inpSmartArray.toArray();
         Arrays.sort(cop, new Comparator<Object>() {
             @Override
@@ -23,5 +23,5 @@ public class SortDecorator extends SmartArrayDecorator{
         });
         return new BaseArray(cop);
     }
-    
+
 }

@@ -11,11 +11,12 @@ public class FilterDecorator extends SmartArrayDecorator {
         super(FilterDecorator.filter(inpSmartArray, inpPredicate));
     }
 
-    private static SmartArray filter(SmartArray inpSmartArray, MyPredicate inpPredicate){
+    private static SmartArray filter(SmartArray inpSmartArray,
+                                     MyPredicate inpPredicate) {
         Object[] nonRepElem = new Object[inpSmartArray.size()];
         int lastUsed = -1;
         for (Object i : inpSmartArray.toArray()) {
-            if (inpPredicate.test(i)) nonRepElem[++lastUsed] = i;
+            if (inpPredicate.test(i)) {nonRepElem[++lastUsed] = i;}
         }
         return new BaseArray(Arrays.copyOfRange(nonRepElem, 0, lastUsed + 1));
     }

@@ -1,6 +1,7 @@
 package ua.edu.ucu;
 
 import java.util.Arrays;
+
 import ua.edu.ucu.functions.MyComparator;
 import ua.edu.ucu.functions.MyFunction;
 import ua.edu.ucu.functions.MyPredicate;
@@ -9,7 +10,7 @@ import ua.edu.ucu.smartarr.*;
 public class SmartArrayApp {
 
     public static Integer[]
-            filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
+    filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
 
         MyPredicate pr = new MyPredicate() {
             @Override
@@ -33,6 +34,7 @@ public class SmartArrayApp {
         };
 
         // Input: [-1, 2, 0, 1, -5, 3]
+
         SmartArray sa = new BaseArray(integers);
 
 
@@ -46,7 +48,7 @@ public class SmartArrayApp {
     }
 
     public static String[]
-            findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
+    findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
         MyPredicate pr = new MyPredicate() {
             @Override
             public boolean test(Object t) {
@@ -67,7 +69,7 @@ public class SmartArrayApp {
             @Override
             public Object apply(Object t) {
                 Student copInpStudent = (Student) t;
-                return new Student(copInpStudent.getName(), copInpStudent.getSurname(), copInpStudent.getGPA(), 2*copInpStudent.getYear());
+                return new Student(copInpStudent.getName(), copInpStudent.getSurname(), copInpStudent.getGPA(), 2 * copInpStudent.getYear());
             }
         };
 
@@ -88,7 +90,7 @@ public class SmartArrayApp {
         sa = new SortDecorator(sa, cmp);
         Object[] arr = sa.toArray();
         String[] rezArr = new String[sa.size()];
-        for (int i=0; i< sa.size(); i++){
+        for (int i = 0; i < sa.size(); i++) {
             rezArr[i] = ((Student) arr[i]).getSurname() + " " + ((Student) arr[i]).getName();
         }
         return rezArr;
