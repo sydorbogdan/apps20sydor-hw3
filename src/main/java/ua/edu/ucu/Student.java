@@ -1,7 +1,7 @@
 package ua.edu.ucu;
 
 
-class Student {
+public class Student {
 
     private double GPA;
     private int year;
@@ -34,6 +34,16 @@ class Student {
     @Override
     public String toString() {
         return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
+    }
+
+    @Override
+    public boolean equals(Object inpStudent) {
+        Student copInpStudent = (Student) inpStudent;
+        boolean eq = (this.GPA == copInpStudent.GPA)
+                && (this.name.equals(copInpStudent.name))
+                && (this.surname.equals(copInpStudent.surname))
+                && (this.year == copInpStudent.year);
+        return eq;
     }
 
 }

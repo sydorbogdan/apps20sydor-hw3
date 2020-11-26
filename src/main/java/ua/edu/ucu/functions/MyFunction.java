@@ -10,6 +10,5 @@ package ua.edu.ucu.functions;
  * @author Andrii_Rodionov
  */
 public interface MyFunction {
-
     Object apply(Object t);
 }
