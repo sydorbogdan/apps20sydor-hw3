@@ -13,7 +13,7 @@ import ua.edu.ucu.smartarr.SortDecorator;
 import ua.edu.ucu.smartarr.MapDecorator;
 
 
-public class SmartArrayApp {
+abstract class SmartArrayApp {
 
     public static Integer[]
     filterPositiveIntegersSortAndMultiplyByTwo(Integer[] integers) {
@@ -54,8 +54,8 @@ public class SmartArrayApp {
     }
 
     public static String[]
-    findDistinctStudentNamesFromSecondYearWithGPAgtAndOrderedBySurname
-            (Student[] students, int lowestGPA) {
+    findDistinctStudentNamesFromSecondYearWithGPAgtAndOrderedBySurname(
+            Student[] students, int lowestGPA) {
         MyPredicate pr = new MyPredicate() {
             @Override
             public boolean test(Object t) {
