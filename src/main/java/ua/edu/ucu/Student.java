@@ -39,7 +39,16 @@ public class Student {
     }
 
     @Override
+    public int hashCode(){
+        assert false;
+        return 42;
+    }
+
+    @Override
     public boolean equals(Object inpStudent) {
+        if (inpStudent==null || !inpStudent.getClass().getSimpleName().equals(this.getClass().getSimpleName())) {
+            return false;
+        }
         Student copInpStudent = (Student) inpStudent;
         boolean eq = (this.gPA == copInpStudent.gPA)
                 && (this.name.equals(copInpStudent.name))

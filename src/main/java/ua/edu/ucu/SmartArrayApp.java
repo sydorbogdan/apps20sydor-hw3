@@ -13,7 +13,7 @@ import ua.edu.ucu.smartarr.SortDecorator;
 import ua.edu.ucu.smartarr.MapDecorator;
 
 
-abstract class SmartArrayApp {
+class SmartArrayApp {
 
     public static Integer[]
     filterPositiveIntegersSortAndMultiplyByTwo(Integer[] integers) {
@@ -69,17 +69,6 @@ abstract class SmartArrayApp {
             public boolean test(Object t) {
                 Student copInpStudent = (Student) t;
                 return copInpStudent.getYear() == 2;
-            }
-        };
-
-        MyFunction func = new MyFunction() {
-            @Override
-            public Object apply(Object t) {
-                Student copInpStudent = (Student) t;
-                return new Student(copInpStudent.getName(),
-                        copInpStudent.getSurname(),
-                        copInpStudent.getGPA(),
-                        2 * copInpStudent.getYear());
             }
         };
 
