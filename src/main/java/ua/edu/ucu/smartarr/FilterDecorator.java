@@ -16,8 +16,15 @@ public class FilterDecorator extends SmartArrayDecorator {
         Object[] nonRepElem = new Object[inpSmartArray.size()];
         int lastUsed = -1;
         for (Object i : inpSmartArray.toArray()) {
-            if (inpPredicate.test(i)) { nonRepElem[++lastUsed] = i; }
+            if (inpPredicate.test(i)) {
+                nonRepElem[++lastUsed] = i;
+            }
         }
         return new BaseArray(Arrays.copyOfRange(nonRepElem, 0, lastUsed + 1));
+    }
+
+    @Override
+    public String operationDescription() {
+        return "Tests every element and removes it if it doesn't satisfy MyPredicate";
     }
 }

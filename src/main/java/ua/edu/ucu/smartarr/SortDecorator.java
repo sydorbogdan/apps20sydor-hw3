@@ -24,4 +24,9 @@ public class SortDecorator extends SmartArrayDecorator {
         return new BaseArray(cop);
     }
 
+    @Override
+    public String operationDescription() {
+        return "Sorts elements using MyComparator to compare them";
+    }
+
 }

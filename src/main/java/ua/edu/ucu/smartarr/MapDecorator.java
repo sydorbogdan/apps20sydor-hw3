@@ -21,4 +21,8 @@ public class MapDecorator extends SmartArrayDecorator {
         return new BaseArray(nonRepElem);
     }
 
+    @Override
+    public String operationDescription() {
+        return "Map every element to another object using MyFunction";
+    }
 }
